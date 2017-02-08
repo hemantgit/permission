@@ -33,20 +33,50 @@ define(function (require, exports, module) {
         //Getting account and software details
         model.getAccountInformation = function () {
             var deferred = $q.defer();
-            console.log(typeof(state.getAccountInformationUrl));
-            var url = state.getAccountInformationUrl;
-            $http.get(url)
+            $http.get(state.getAccountInformationUrl)
                 .then(function (accountDetails) {
                     var BCIN = accountDetails.data.customerId;
 
                     var _softwareUrl = state.getAccountingSoftwareUrl + '?BCIN=' + BCIN;
                     var _selectedAccountsUrl = state.getSelectedAccountsUrl + '?BCIN=' + BCIN;
 
-
-
+                    $http.get(_softwareUrl)
+                        .then(function (softwareList) {
+                            $http.get(_selectedAccountsUrl)
+                                .then(function (selectedAccountsList) {
+                                    deferred.resolve({
+                                        accountDetails: accountDetails,
+                                        softwareList: softwareList,
+                                        selectedAccountsList: selectedAccountsList
+                                    });
+                                });
+                        });
                 });
             return deferred.promise;
         };
+        // Posting data
+         model.sendingCustomerDetails = function (customerId, selectedSoftware, selectedAccounts) {
+            var postData = {
+                "customerdata": {
+                    "BCIN": customerId,
+                    "userID": "U0056",
+                    "accountingPackageIDs": [
+                        selectedSoftware
+                    ],
+                    "accountIDs": selectedAccounts
+                }
+            };
+            console.log('PostData:-'+JSON.stringify(postData));
+            return $http({
+                method: 'post',
+                url: state.saveCustomerDetailsUrl,
+                data: JSON.stringify(postData),
+                dataType: 'jsonp',
+                headers: {
+                    'Access-Control-Allow-Origin': '*',
+                }
+            });
+        }
         return model;
     }
     module.exports = WidgetModel;
