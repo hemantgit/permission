@@ -1,0 +1,6 @@
+{
+    "title": "Datepicker Component",
+    "custom": {
+        "bowerRoute": "../../../"
+    }
+}

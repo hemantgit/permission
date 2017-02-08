@@ -1,0 +1,11 @@
+{
+  "en_US":{
+    "widget_name":"Permission Management ",
+    "page_title":"Business ABC",
+    "page_heading":"My Accounting Package Selection",
+    "software_provider_heading_text":"My accounting software provider is:",
+    "account_header_text":"I authorise HSBC to send transaction data for the following accounts:",
+    "no_data_update_popup_text":"You have not changed anything"
+  }
+
+}

@@ -1,0 +1,30 @@
+{
+  "name": "widget-accounting-package-selection",
+  "version": "0.1.0-alpha.0",
+  "description": "Accounting package selection",
+  "main": "dist/widget-accounting-package-selection.js",
+  "moduleType": [
+    "umd"
+  ],
+  "ignore": [
+    "**/.*",
+    "bower_components",
+    "node_modules"
+  ],
+  "private": true,
+  "dependencies": {
+    "base": "^3.x",
+    "core": "^3.x",
+    "ui": "^3.x"
+  },
+  "devDependencies": {
+    "mock": "^1.x",
+    "config": "^3.x",
+    "theme-default": "^1.x",
+    "angular-mocks": "~1.5",
+    "requirejs": "~2.1.20"
+  },
+  "config": {
+    "entry": { "widget-accounting-package-selection" : "scripts/main.js" }
+  }
+}

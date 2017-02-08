@@ -1,0 +1,32 @@
+{
+  "name": "mock",
+  "version": "1.4.0",
+  "description": "Widget and Portal mocks",
+  "main": "./scripts/main.js",
+  "author": "Dragos <dragos@backbase.com>",
+  "contributors": [
+    "Borys Ponomarenko <borysp@backbase.com>"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@stash.backbase.com:7999/lpm/mock.git"
+  },
+  "publishConfig": {
+    "registry": "http://launchpad.backbase.com:8765"
+  },
+  "license": "SEE LICENSE IN LICENSE",
+  "devDependencies": {
+    "es6-promise-polyfill": "^1.2.0",
+    "lodash-compat": "^3.10.1",
+    "whatwg-fetch": "^0.11.0"
+  },
+  "scripts": {
+    "test": "bblp test -c",
+    "build": "bblp test -c && bblp build"
+  },
+  "config": {
+    "paths": {
+      "scripts": "./scripts"
+    }
+  }
+}

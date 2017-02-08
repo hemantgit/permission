@@ -1,0 +1,22 @@
+@import "core.min.css";
+
+// import theme specific fonts
+@import "typography.less";
+
+// import theme specific icons
+@import "iconography.less";
+
+@import "../bower_components/theme/base.less";
+
+// theme variable overrides.
+@import "variables-custom.less";
+@import "variables-bootstrap.less"; // overrides bootstrap variables
+@import "variables-launchpad.less"; // overrides universal variables
+
+// theme extensions.
+@import "theme.less";
+@import "overwrite.less";
+
+// variable overrides.
+@base-path: "../../../theme/"; // relative path to theme (core static assets will resolve here).
+@edition: "retail"; // build the retail components of the theme.

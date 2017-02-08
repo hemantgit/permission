@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:g="http://www.backbase.com/2008/gadget" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Floating label component</title>
+    <link href="/bower_components/theme/themes/default/css/base.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../../dist/styles/base.css" type="text/css"/>
+    <!-- include core -->
+    <script>window.jQuery || document.write("<script src='bower_components/jquery/dist/jquery.min.js'>\x3C/script>");</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.15/require.js"></script>
+    <script src="bower_components/config/requirejs.conf.js"></script>
+    <!-- create the demo -->
+    <script>
+        require([
+            'base',
+            './scripts/main'
+        ], function (base, comp) {
+
+            var demo = base.createModule('demo.ui.floating-label', [comp.name]);
+
+            // Mock widget service
+            demo.constant('widget', {});
+            demo.controller('MainCtrl', function () {
+                this.firstName = '';
+            });
+
+            base.ng.bootstrap(document.body, [demo.name]);
+        });
+    </script>
+
+    <style>
+        markdown {
+            display: none;
+        }
+        .lp-floating-label {
+            border: 1px solid #555;
+            border-radius: 4px;
+        }
+        .input-error {
+            border-color: red;
+        }
+
+        .input-error label {
+            color: red;
+        }
+
+        input {
+            font-weight: 500;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container" ng-controller="MainCtrl as mainCtrl">
+
+    <markdown>
+        <% include README.md %>
+    </markdown>
+
+    <div class="source_section">
+        <h2>Usage example</h2>
+
+        <p>In template:</p>
+
+        <pre><code class="src-html source_visible ng-non-bindable">
+            &lt;form name=&quot;mainCtrl.demoForm&quot; novalidate&gt; 
+                &lt;label lp-floating-label for=&quot;firstName&quot;&gt;First Name&lt;/label&gt;
+                &lt;input id=&quot;firstName&quot; type=&quot;text&quot; name=&quot;firstName&quot; ng-model=&quot;mainCtrl.firstName&quot; required /&gt;
+            &lt;/form&gt;
+        </code></pre>
+
+        <p>Demo:</p>
+        <div class="source_example">
+            <form name="mainCtrl.demoForm" novalidate>
+                <div class="form-group">
+                    <label lp-floating-label for="firstName">First Name</label>
+                    <input id="firstName" type="text" name="firstName" ng-model="mainCtrl.firstName" required />
+                    <p ng-if="mainCtrl.demoForm.firstName.$invalid && mainCtrl.demoForm.firstName.$dirty">First Name is required</p>
+                </div>
+
+                <div class="form-group">
+                    <label lp-floating-label for="message">Message</label>
+                    <textarea id="message" name="message" ng-model="mainCtrl.message" required></textarea>
+                    <p ng-if="mainCtrl.demoForm.message.$invalid && mainCtrl.demoForm.message.$dirty">Message is required</p>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

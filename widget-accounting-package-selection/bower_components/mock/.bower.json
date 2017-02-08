@@ -1,0 +1,25 @@
+{
+  "name": "mock",
+  "version": "1.4.0",
+  "description": "Widget and Portal mocks",
+  "main": "./dist/scripts/main.js",
+  "authors": [
+    "dragosh <oancea.dragosh@gmail.com>"
+  ],
+  "moduleType": [
+    "umd"
+  ],
+  "ignore": [
+    "node_modules",
+    "web_modules",
+    "test"
+  ],
+  "private": true,
+  "devDependencies": {
+    "jquery": "2.x"
+  },
+  "_source": "mock",
+  "_target": "1.4.0",
+  "_release": "1.4.0",
+  "_originalSource": "mock"
+}

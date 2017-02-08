@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<catalog>
+  <feature>
+    <name>config</name>
+    <contextItemName>[BBHOST]</contextItemName>
+    <properties>
+      <property name="title" label="Title" viewHint="admin,designModeOnly">
+        <value type="string">Config</value>
+      </property>
+      <property label="Version" name="version" viewHint="text-input,admin,designModeOnly">
+        <value type="string">3.5.5</value>
+      </property>
+    </properties>
+  </feature>
+</catalog>

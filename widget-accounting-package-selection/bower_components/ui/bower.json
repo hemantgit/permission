@@ -1,0 +1,31 @@
+{
+  "name": "ui",
+  "version": "3.0.10",
+  "main": [
+    "./styles/base.less",
+    "./scripts/main.js"
+  ],
+  "private": true,
+  "authors": [
+    "Dragos Oancea <dragos@backbase.com>"
+  ],
+  "moduleType": [
+    "umd"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "base": "^3.0.1",
+    "core": "^3.0.0",
+    "hammerjs": "~2.0.4",
+    "jquery": "~2.1.3"
+  },
+  "devDependencies": {
+    "config": "2.x",
+    "theme": "2.x",
+    "angular-mocks": "^1.5.0"
+  }
+}

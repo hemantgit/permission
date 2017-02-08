@@ -1,0 +1,34 @@
+<catalog>
+    <widget>
+        <name>widget-accounting-package-selection</name>
+        <contextItemName>[BBHOST]</contextItemName>
+        <properties>
+            <property label="Title" name="title" viewHint="text-input,admin,user">
+                <value type="string">Permission Management</value>
+            </property>
+            <property label="Icon" name="icon" viewHint="text-input,admin,user">
+                <value type="string"></value>
+            </property>
+            <property name="src">
+                <value type="string">$(itemRoot)/index.html</value>
+            </property>
+            <property name="thumbnailUrl">
+                <value type="string">$(itemRoot)/icon.png</value>
+            </property>
+            <!-- custom properties -->
+            <property name="getAccountingSoftwareUrl" label="Get Accounting Software URL" viewHint="text-input,admin,designModeOnly">
+                 <value type="string">http://localhost:8199/getAccountingPackages</value>
+            </property>
+            <property name="getAccountInformationUrl" label="Get Account Information URL" viewHint="text-input,admin,designModeOnly">
+                <value type="string">/portalserver/static/widgets/[BBHOST]/widget-accounting-package-selection/locale/session-api.json</value>
+                <!--<value type="string">http://hkl101492.hk.hsbc:8257/v1/user/ea/</value>-->
+            </property>
+            <property name="getSelectedAccountsUrl" label="Get Selected Accounts URL" viewHint="text-input,admin,designModeOnly">
+                <value type="string">http://localhost:8199/getSelectedAccounts</value>
+            </property>
+            <property name="saveCustomerDetailsUrl" label="Save Customer Details URL" viewHint="text-input,admin,designModeOnly">
+                <value type="string">http://localhost:8199/postCustomerData</value>
+            </property>
+        </properties>
+    </widget>
+</catalog>

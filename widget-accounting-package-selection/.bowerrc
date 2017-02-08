@@ -1,0 +1,17 @@
+{
+    "analytics": false,
+    "interactive": true,
+	"proxy":"http://44007368:Kumar123!@uk-proxy-01.systems.uk.hsbc:80/",
+	"https-proxy":"http://44007368:Kumar123!@uk-proxy-01.systems.uk.hsbc:80/",
+	"strict-ssl":false,
+    "resolvers": [
+        "filesystem-bower-resolver",
+        "bb-bower-resolver"
+    ],
+    "storage": {
+        "packages": "target/.bower/packages",
+        "registry": "target/.bower/registry",
+        "links": "target/.bower/links"
+    }
+}
+ 

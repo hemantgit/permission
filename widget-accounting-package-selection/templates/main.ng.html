@@ -1,0 +1,47 @@
+<div ng-controller="MainCtrl as mainCtrl">
+    <header>
+        <h1>{{mainCtrl.packageSelectionText.widget_name}}</h1>
+    </header>
+    <section class="permission-wrap">
+        <h2 class="page-title">{{mainCtrl.packageSelectionText.page_title}}</h2>
+        <h3 class="bold spacer">{{mainCtrl.packageSelectionText.page_heading}}</h3>
+
+        <form name="mainCtrl.packageSelectionForm">
+            <section class="spacer">
+                <p>{{mainCtrl.packageSelectionText.software_provider_heading_text}}</p>
+                <ul>
+                    <li ng-repeat="list in mainCtrl.listOfSoftwares">
+                        <input type="radio" name="list-of-softwares" value={{list.id}}
+                               ng-model="mainCtrl.selectedSoftware">{{list.name}}
+                    </li>
+                </ul>
+            </section>
+
+            <section class="spacer">
+                <p>{{mainCtrl.packageSelectionText.account_header_text}}</p>
+                <ul>
+                    <li ng-repeat="details in mainCtrl.accountDetails">
+                        <label>
+                            <input type="checkbox" ng-model="details.isSelected"/>
+                            {{details.currency}} {{details.product}} {{details.sortCode}} {{details.accountNumber}}
+                            {{details.customerName}}
+                        </label>
+                    </li>
+                </ul>
+            </section>
+            <section class="spacer">
+                <button type="cancel" ng-click="mainCtrl.cancelData()" class="btn">Cancel</button>
+                <button type="submit" ng-click="mainCtrl.saveData()" class="btn btn-success"
+                        ng-disabled="mainCtrl.isDisabled">Save
+                </button>
+            </section>
+        </form>
+    </section>
+    <div class="overlay">
+        <div class="content">
+            <button class="lightbox-close" title="Close" ng-click="mainCtrl.hideOverlay()"><i
+                    class="lp-icon lp-icon-remove"></i></button>
+            {{mainCtrl.pageMessage}}
+        </div>
+    </div>
+</div>

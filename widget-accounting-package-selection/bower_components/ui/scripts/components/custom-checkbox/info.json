@@ -1,0 +1,6 @@
+{
+    "title": "Custom Radio Button Component",
+    "custom": {
+        "bowerRoute": "../../../"
+    }
+}
